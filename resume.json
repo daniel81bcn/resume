@@ -6,7 +6,7 @@
     "email": "daniel81bcn@gmail.com",
     "phone": "+48 570 000 381",
     "website": "",
-    "summary": "",
+    "summary": "Full-stack Web Developer with extensive Video Streaming knowledge. Worked for few years as a Scrum Master and implemented several start-up MVPs applying the Lean Startup strategy.",
     "location": {
       "address": "Sielska 7",
       "postalCode": "51-361",
@@ -18,17 +18,17 @@
       {
         "network": "LinkedIn",
         "username": "daniel81bcn",
-        "url": "http://linkedin.com/in/daniel81bcn"
+        "url": "http://www.linkedin.com/in/daniel81bcn"
       },
       {
         "network": "github",
         "username": "daniel81bcn",
-        "url": "https://github.com/daniel81bcn"
+        "url": "https://www.github.com/daniel81bcn"
       },
       {
         "network": "bitbucket",
         "username": "daniel81bcn",
-        "url": "https://bitbucket.org/daniel81bcn"
+        "url": "https://bitbucket.org/daniel81bcn/profile/teams"
       }
     ]
   },
@@ -37,194 +37,170 @@
       "company": "Flumotion",
       "position": "Freelance Full-stack Developer",
       "website": "http://flumotion.com",
-      "startDate": "2014-12-01",
-      "endDate": "",
-      "summary": "Adding features to the product.",
-      "highlights": []
+      "startDate": "2014-11-15",
+      "summary": "Adding features to the Online Video Platform.",
+      "highlights": [
+        "Yeoman, AngularJS, JW Player, Video.js, Bootstrap, Material Design.",
+        "Python - Django REST Framework."
+      ]
     },
     {
       "company": "YadaZing",
       "position": "Freelance Front-end Engineer",
       "website": "http://yadazing.com",
-      "startDate": "2014-07-01",
-      "endDate": "2014-10-01",
+      "startDate": "2014-07-15",
+      "endDate": "2014-10-15",
       "summary": "Created English lessons using Youtube videos.",
       "highlights": [
-        "Node.js, Yeoman, Grunt, AngularJS, Video.js, Youtube API, Heap Analytics."
+        "Yeoman, AngularJS, Video.js, Bootstrap.",
+        "Youtube API, Heap Analytics, Intercom."
       ]
     },
     {
       "company": "Flumotion",
       "position": "Front-end Engineer",
       "website": "http://flumotion.com",
-      "startDate": "2011-11-01",
-      "endDate": "2014-11-01",
+      "startDate": "2011-10-15",
+      "endDate": "2014-11-15",
       "summary": "Developed extensive front-end solutions for the Online Video & Radio Platform.",
       "highlights": [
-        "Scrum master, architect and project management.",
-        "Node.js, Yeoman, Grunt, AngularJS, Backbone.js, ActionScript, Strobe Media Playback, VideoJS",
-        "MAST/VAST, Require.js, Google Closure, Python, Django - Rest Framework, South, Nginx."
+        "Yeoman, Require.js, AngularJS, Backbone.js, ActionScript, Bootstrap.",
+        "Strobe Media Playback, Video.js, VAST.",
+        "Node.js, Python - Django REST Framework, MySQL, Nginx."
       ]
     },
     {
       "company": "Medistream.tv",
       "position": "Freelance Full-stack Developer",
       "website": "https://github.com/daniel81bcn/medistream",
-      "startDate": "2014-05-01",
-      "endDate": "2014-08-01",
-      "summary": "Developed both front-end and back-end of the product.",
+      "startDate": "2014-05-15",
+      "endDate": "2014-09-15",
+      "summary": "Developed the first MVP of the product and added some functionality.",
       "highlights": [
-        "Node.js, Yeoman, Grunt, Angular.js, Python, Django - Rest Framework, South."
+        "Yeoman, AngularJS, Bootstrap, Stripe.",
+        "Node.js, Python - Django REST Framework, MongoDB, MySQL, Nginx."
       ]
     },
     {
       "company": "NicePeopleAtWork",
       "position": "Freelance Android Developer",
       "website": "http://nicepeopleatwork.com",
-      "startDate": "2014-04-01",
-      "endDate": "2014-06-01",
+      "startDate": "2014-04-15",
+      "endDate": "2014-06-15",
       "summary": "Developed a plugin for Android video players to track viewers experience.",
-      "highlights": []
+      "highlights": [
+        "Android Development, Widevine."
+      ]
     },
     {
       "company": "Wuaki.tv",
       "position": "Freelance Flash Developer",
       "website": "http://wuaki.tv",
-      "startDate": "2012-12-01",
+      "startDate": "2012-12-15",
       "endDate": "2013-01-31",
-      "summary": "I18n and Conviva's statistics services integration.",
+      "summary": "I18n and analytics service integration.",
       "highlights": [
-        "ActionScript, Strobe Media Playback 1.6, OSMF 2.0."
+        "ActionScript, Strobe Media Playback 1.6, OSMF 2.0, Conviva."
       ]
     },
     {
       "company": "Flumotion",
       "position": "Flex Developer",
       "website": "http://flumotion.com",
-      "startDate": "2010-02-01",
-      "endDate": "2011-10-01",
+      "startDate": "2010-02-15",
+      "endDate": "2011-10-15",
       "summary": "Designed and developed CMS for the WebTV Online Video & Radio Platform.",
       "highlights": [
-        "Flex 4.1-4.5, Swiz Framework, Flash CS5.5, Pyton - Django, Git, Trac."
+        "Flex, Swiz Framework, Flash CS5.5, Python - Django."
       ]
     },
     {
       "company": "CASER",
-      "position": "Project Manager and Web Developer",
+      "position": "Project Manager and Full-stack Developer",
       "website": "http://caser.es",
-      "startDate": "2009-04-01",
-      "endDate": "2009-12-01",
-      "summary": "Managed, analysed and developed Insurance Solution for the automotive industry. Benefits up to 46% with 4 team members.",
+      "startDate": "2008-09-15",
+      "endDate": "2009-12-15",
+      "summary": "Managed 4 developers and worked together implementing an Insurance Solution for the automotive industry.",
       "highlights": [
-        "HP Quality Center 10, Microsoft Project, Together, Flash Builder 4, Flex 3, Cairngorm, BlazeDS, Java 5, JDBC, Oracle, WebLogic 10.1, Subversion."
-      ]
-    },
-    {
-      "company": "CASER",
-      "position": "Adobe Flex 3.0 Professor",
-      "website": "http://caser.es",
-      "startDate": "2009-02-01",
-      "endDate": "2009-04-01",
-      "summary": "Worked 2 months self-teaching Adobe Flex and preparing course material. 40h course with 12 members.",
-      "highlights": [
-        "Flex 3, Cairngorm, Swiz, BlazeDS, Java, ColdFusion."
-      ]
-    },
-    {
-      "company": "CASER",
-      "position": "Full-stack Developer",
-      "website": "http://caser.es",
-      "startDate": "2008-09-01",
-      "endDate": "2009-02-01",
-      "summary": "Analysed and developed payments authorization application.",
-      "highlights": [
-        "HP Quality Center 10, Together, Flex 3, RemoteObject's, JSP, Java 1.4, JDBC, Oracle, WebLogic 8.1, Visual SourceSafe."
+        "Flex, Cairngorm, BlazeDS.",
+        "Java 5, JDBC, Oracle, WebLogic 10.1."
       ]
     },
     {
       "company": "Software Greenhouse",
       "position": "Web Developer",
       "website": "http://swgreenhouse.com",
-      "startDate": "2008-03-01",
-      "endDate": "2008-09-01",
+      "startDate": "2008-03-15",
+      "endDate": "2008-09-15",
       "summary": "Analysed, designed and developed new features for several distributed applications for work management.",
       "highlights": [
-        "J2EE, Struts, Java 5, Hibernate 3.0, SQLServer, Tomcat 6, Visual SourceSafe."
+        "J2EE, Struts, Java 5, Hibernate 3.0, SQLServer, Tomcat 6."
       ]
     },
     {
       "company": "Software Greenhouse",
       "position": "Freelance Full-stack Developer",
       "website": "http://swgreenhouse.com",
-      "startDate": "2007-09-01",
-      "endDate": "2008-02-01",
+      "startDate": "2007-09-15",
+      "endDate": "2008-02-15",
       "summary": "Developed an eCommerce store including architecture design, documentation, testing and deployment.",
       "highlights": [
-        "Swing, J2EE, Struts, AJAX, Java 5, Hibernate 3, MySQL, Tomcat 6, Visual SourceSafe."
+        "J2EE, Struts, Java 5, Hibernate 3, MySQL, Tomcat 6."
       ]
     },
     {
       "company": "Nestle",
       "position": "Software Developer",
       "website": "http://nestle.com",
-      "startDate": "2007-06-01",
-      "endDate": "2007-08-01",
-      "summary": "Developed a module to interface between various document templates and unify formats and methodologies among the various departments. Analysed and developed application to configure and make changes in the tables and fields from different databases accessible through a graphical environment.",
+      "startDate": "2007-03-15",
+      "endDate": "2007-08-15",
+      "summary": "Developed a module to interface between various document templates and unify formats and methodologies among the various departments.",
       "highlights": [
-        "Crystal Reports, .NET, J#, Acces, Excel, Visual SourceSafe."
-      ]
-    },
-    {
-      "company": "UOC",
-      "position": "Web Developer",
-      "website": "http://www.uoc.edu",
-      "startDate": "2007-03-01",
-      "endDate": "2007-05-01",
-      "summary": "Website maintenance and features for the university's online magazine CMS.",
-      "highlights": [
-        "CSS, JSP, Struts, Java 5, Maven, JDBC, PL/SQL, Oracle, JBoss, Visual SourceSafe."
+        "Crystal Reports, .NET, J#, Acces, Excel."
       ]
     },
     {
       "company": "CCRTV Interactiva",
       "position": "System Manager and Software Developer",
       "website": "http://www.ccma.cat",
-      "startDate": "2004-09-01",
-      "endDate": "2007-02-01",
-      "summary": "Maintenance of several multimedia and digital video projects, created cronjobs for scheduled FTP and Terrestrial Digital Television applications updating (TDT - TV3i) and monitored systems and teletext subtitling. 200.000+ registered users.",
+      "startDate": "2004-09-15",
+      "endDate": "2007-02-15",
+      "summary": "Maintenance of several multimedia and digital video projects, created cronjobs for scheduled FTP and Terrestrial Digital Television applications updating (TDT - TV3i), and monitored systems and teletext subtitling. 200.000+ registered users.",
       "highlights": [
-        "J2EE, Struts, Java 1.4 - 5, JDBC, Oracle, Tomcat 5.5 - 6, XML - XSD, Nagios, Linux shell scripting, Subversion."
+        "J2EE, Struts, Java 1.4 - 5, JDBC, Oracle, Tomcat 5.5 - 6, Nagios, Linux shell scripting."
       ]
     },
     {
       "company": "Forum Barcelona 2004",
       "position": "Audiovisual Technician",
       "website": "http://en.wikipedia.org/wiki/2004_Universal_Forum_of_Cultures",
-      "startDate": "2004-05-01",
-      "endDate": "2004-09-01",
+      "startDate": "2004-05-15",
+      "endDate": "2004-09-15",
       "summary": "",
       "highlights": []
     }
   ],
-  "volunteer": [
-    {
-      "organization": "",
-      "position": "",
-      "website": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": []
-    }
-  ],
+  "volunteer": [],
   "education": [
     {
       "institution": "Universitat Politècnica de Catalunya",
-      "area": "Information Technology",
+      "area": "IT",
       "studyType": "Thesis",
-      "startDate": "2005",
-      "endDate": "2006",
-      "gpa": "Qualification: 9.5 out of 10",
+      "startDate": "2005-01-15",
+      "endDate": "2006-01-15",
+      "gpa": "Qualification: 9,5 out of 10.",
+      "courses": [
+        "Java",
+        "Java3D-OpenGL",
+        "MVC Architecture"
+      ]
+    },
+    {
+      "institution": "Universitat Politècnica de Catalunya",
+      "area": "IT",
+      "studyType": "Bachelor's degree",
+      "startDate": "2000-01-15",
+      "endDate": "2006-01-15",
       "courses": []
     }
   ],
@@ -232,21 +208,79 @@
   "publications": [],
   "skills": [
     {
-      "name": "Web Development",
+      "name": "Methodologies",
       "level": "Master",
       "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
+        "Scrum",
+        "Kanban",
+        "Lean Startup"
       ]
     },
     {
-      "name": "Compression",
+      "name": "Architecture",
       "level": "Master",
       "keywords": [
-        "Mpeg",
-        "MP4",
-        "GIF"
+        "Yeoman",
+        "Require.js",
+        "Grunt",
+        "Gulp",
+        "Bower"
+      ]
+    },
+    {
+      "name": "UI/UX Design",
+      "level": "Master",
+      "keywords": [
+        "Bootstrap",
+        "Material Design",
+        "Font Awesome",
+        "SASS",
+        "LESS"
+      ]
+    },
+    {
+      "name": "Front-end Development",
+      "level": "Master",
+      "keywords": [
+        "jQuery",
+        "AngularJS",
+        "Backbone.js",
+        "ActionScript",
+        "Cross-browser development",
+        "Karma",
+        "Protractor"
+      ]
+    },
+    {
+      "name": "Back-end Development",
+      "level": "Advanced",
+      "keywords": [
+        "Node.js",
+        "Python",
+        "Django REST Framework",
+        "Java",
+        "RESTful APIs"
+      ]
+    },
+    {
+      "name": "Data Modeling",
+      "level": "Intermediate",
+      "keywords": [
+        "MySQL",
+        "MongoDB",
+        "PL/SQL",
+        "Django-South",
+        "Hibernate"
+      ]
+    },
+    {
+      "name": "Server and Hosting Environment",
+      "level": "Intermediate",
+      "keywords": [
+        "Linux Shell Scripting",
+        "Apache",
+        "Nginx",
+        "Heroku"
       ]
     }
   ],
