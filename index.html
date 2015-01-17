@@ -1,658 +1,784 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Daniel Mañá</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <style>
-      .clear-margin {
-  margin: 0;
-}
-.space-top {
-  margin-top: 10px;
-}
-.space-right {
-  margin-right: 10px;
-}
-.icon-left {
-  margin-right: 5px;
-}
-.icon-right {
-  margin-left: 5px;
-}
-.labels {
-  word-spacing: 5px;
-  line-height: 2;
-}
-.label-keyword {
-  display: inline-block;
-  background: #7eb0db;
-  color: white;
-  font-size: 0.9em;
-  padding: 5px;
-  border: 1px solid #357ebd;
-}
-.link-disguise {
-  color: inherit;
-}
-.link-disguise:hover {
-  color: inherit;
-}
-@media (max-width: 992px) {
-  .clear-margin-sm {
-    margin-bottom: 0;
-  }
-}
-body {
-  font-family: 'Lato';
-  background: #f0f0f0;
-  color: #333333;
-}
-.main {
-  padding: 5px;
-}
-.card {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 3px;
-  min-height: 300px;
-  padding: 10px;
-}
-.card-nested {
-  min-height: 0;
-  margin-bottom: 10px;
-  border-width: 1px 0 0 0;
-}
-.card-nested:before,
-.card-nested:after {
-  content: " ";
-  display: table;
-}
-.card-nested:after {
-  clear: both;
-}
-@media (max-width: 480px) {
-  .card-nested {
-    padding: 5px 0;
-  }
-}
-.background-card {
-  padding: 10px 20px;
-}
-.card-wrapper {
-  padding: 5px;
-}
-@media (max-width: 992px) {
-  .card-wrapper {
-    float: none !important;
-  }
-}
-.text-bolder {
-  font-weight: bold;
-}
-.background-details .detail {
-  display: table;
-  padding: 10px 0;
-}
-.background-details .detail .icon {
-  min-width: 45px;
-  max-width: 45px;
-  text-align: center;
-}
-.background-details .detail .info {
-  width: 100%;
-}
-.background-details .detail .title,
-.background-details .detail .icon {
-  color: #707070;
-}
-.background-details .detail .mobile-title {
-  display: none;
-}
-@media (max-width: 480px) {
-  .background-details .detail .mobile-title {
-    display: inline-block;
-    margin-left: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    vertical-align: middle;
-  }
-}
-.background-details .detail .icon,
-.background-details .detail .info {
-  display: table-cell;
-  padding: 0 10px;
-}
-@media (max-width: 480px) {
-  .background-details .detail {
-    display: block;
-  }
-  .background-details .detail .icon {
-    max-width: inherit;
-    min-width: inherit;
-    text-align: left;
-  }
-  .background-details .detail .icon,
-  .background-details .detail .info {
-    display: block;
-    padding: 10px 0;
-  }
-  .background-details .detail .title {
-    display: none;
-  }
-}
-.info .content.has-sidebar {
-  width: 80%;
-  box-sizing: border-box;
-  float: left;
-  padding: 0 10px;
-  border-right: 1px solid #cdcdcd;
-}
-@media (max-width: 992px) {
-  .info .content.has-sidebar {
-    width: 100%;
-    border-right: 0;
-  }
-}
-@media (max-width: 480px) {
-  .info .content.has-sidebar {
-    padding: 0 2px;
-  }
-}
-.info .sidebar {
-  margin-left: 80%;
-  box-sizing: border-box;
-  padding: 10px;
-}
-@media (max-width: 480px) {
-  ul {
-    padding-left: 25px;
-  }
-}
-/*
-    Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
-*/
-.floating-nav-trigger {
-  width: 50px;
-  height: 50px;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  -webkit-transition: background-color 0.5s ease;
-  -o-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
-  display: block;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 10px;
-  background-color: white;
-  font-size: 1.5em;
-  color: #357ebd;
-  z-index: 100;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-.floating-nav-trigger .close-icon {
-  display: none;
-}
-.floating-nav-trigger:hover {
-  color: #1f496e;
-  background-color: #e6e6e6;
-  text-decoration: none;
-}
-.floating-nav-trigger.is-open {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.floating-nav-trigger.is-open .close-icon {
-  display: inherit;
-}
-.floating-nav-trigger.is-open .fa-bars {
-  display: none;
-}
-.floating-nav-trigger.is-open:hover {
-  background-color: white;
-}
-.floating-nav {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  transform: scale(0);
-  -webkit-transform-origin: 100% 100%;
-  -moz-transform-origin: 100% 100%;
-  -ms-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
-  -webkit-transition: transform 0.3s, visibility 0s 0.3s;
-  -o-transition: transform 0.3s, visibility 0s 0.3s;
-  transition: transform 0.3s, visibility 0s 0.3s;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  position: fixed;
-  z-index: 50;
-  right: 10px;
-  bottom: 10px;
-  background-color: white;
-  width: 90%;
-  max-width: 400px;
-  visibility: hidden;
-  overflow: hidden;
-}
-.floating-nav ul {
-  font-size: 1.2em;
-  margin: 0;
-}
-.floating-nav ul li {
-  border-bottom: 1px solid #eff2f6;
-}
-.floating-nav ul li a {
-  padding: 20px;
-  text-decoration: none;
-  color: #357ebd;
-  display: block;
-}
-.floating-nav ul li a:hover {
-  color: #1f496e;
-}
-.floating-nav ul li i.fa {
-  margin-right: 10px;
-}
-.floating-nav ul li:last-child {
-  border-bottom: 0;
-}
-.floating-nav.is-visible {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: transform 0.3s, visibility 0s 0s;
-  -o-transition: transform 0.3s, visibility 0s 0s;
-  transition: transform 0.3s, visibility 0s 0s;
-  visibility: visible;
-}
-@media (max-width: 992px) {
-  .profile-card-wrapper {
-    position: relative;
-  }
-}
-.profile-pic {
-  padding: 20px 0;
-}
-@media (max-width: 992px) {
-  .profile-pic {
-    padding: 10px 0;
-  }
-}
-.profile-pic img {
-  width: 100px;
-  height: 100px;
-}
-@media (max-width: 992px) {
-  .name {
-    margin-top: 10px;
-  }
-}
-@media (max-width: 768px) {
-  .contact-details {
-    text-align: center;
-  }
-}
-.contact-details .detail {
-  display: table;
-  padding: 10px 0;
-}
-.contact-details .detail .icon {
-  padding: 0 10px;
-  color: #707070;
-}
-@media (max-width: 992px) {
-  .contact-details .detail .icon {
-    padding: 0 5px 0 0;
-  }
-}
-.contact-details .detail .info {
-  font-size: 0.8em;
-}
-.contact-details .detail .icon,
-.contact-details .detail .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-@media (max-width: 768px) {
-  .contact-details .detail {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-@media (max-width: 992px) {
-  .contact-details .detail {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 10px;
-  }
-  .contact-details .detail .icon,
-  .contact-details .detail .info {
-    display: inline-block;
-  }
-}
-@media (max-width: 992px) and (min-width: 768px) {
-  .contact-details .detail {
-    float: left;
-    width: 25%;
-  }
-}
-.social-links {
-  line-height: 2.5;
-}
-.social-link {
-  margin-left: 5px;
-  min-width: 35px;
-  display: inline-block;
-}
-.social-link:first-child {
-  margin-left: 0;
-}
-.social-link:hover {
-  text-decoration: none;
-}
-.link-github {
-  color: #454545;
-}
-.link-github:hover,
-.link-github:focus {
-  text-decoration: none;
-  color: #2b2b2b;
-}
-.link-twitter {
-  color: #33ccff;
-}
-.link-twitter:hover,
-.link-twitter:focus {
-  text-decoration: none;
-  color: #00bfff;
-}
-.link-blog {
-  color: #f36f24;
-}
-.link-blog:hover,
-.link-blog:focus {
-  text-decoration: none;
-  color: #d8560c;
-}
-.link-linkedin {
-  color: #007bb6;
-}
-.link-linkedin:hover,
-.link-linkedin:focus {
-  text-decoration: none;
-  color: #005983;
-}
-.link-skype {
-  color: #12a5f4;
-}
-.link-skype:hover,
-.link-skype:focus {
-  text-decoration: none;
-  color: #0986ca;
-}
-.link-stackoverflow {
-  color: #8e8e92;
-}
-.link-stackoverflow:hover,
-.link-stackoverflow:focus {
-  text-decoration: none;
-  color: #747479;
-}
-.link-soundcloud {
-  color: #e8822d;
-}
-.link-soundcloud:hover,
-.link-soundcloud:focus {
-  text-decoration: none;
-  color: #cc6916;
-}
-.link-pinterest {
-  color: #bd091f;
-}
-.link-pinterest:hover,
-.link-pinterest:focus {
-  text-decoration: none;
-  color: #8c0717;
-}
-.link-vimeo {
-  color: #17b3e8;
-}
-.link-vimeo:hover,
-.link-vimeo:focus {
-  text-decoration: none;
-  color: #128fba;
-}
-.link-behance {
-  color: #2c98cf;
-}
-.link-behance:hover,
-.link-behance:focus {
-  text-decoration: none;
-  color: #2379a5;
-}
-.link-codepen {
-  color: #1c1c1c;
-}
-.link-codepen:hover,
-.link-codepen:focus {
-  text-decoration: none;
-  color: #020202;
-}
-.link-foursquare {
-  color: #fa4778;
-}
-.link-foursquare:hover,
-.link-foursquare:focus {
-  text-decoration: none;
-  color: #f91554;
-}
-.link-reddit {
-  color: #545454;
-}
-.link-reddit:hover,
-.link-reddit:focus {
-  text-decoration: none;
-  color: #3b3b3b;
-}
-.link-spotify {
-  color: #acd200;
-}
-.link-spotify:hover,
-.link-spotify:focus {
-  text-decoration: none;
-  color: #829f00;
-}
-.link-dribbble {
-  color: #ce366f;
-}
-.link-dribbble:hover,
-.link-dribbble:focus {
-  text-decoration: none;
-  color: #a82959;
-}
-.link-facebook {
-  color: #4b6daa;
-}
-.link-facebook:hover,
-.link-facebook:focus {
-  text-decoration: none;
-  color: #3b5687;
-}
-.link-angellist {
-  color: #000000;
-}
-.link-angellist:hover,
-.link-angellist:focus {
-  text-decoration: none;
-  color: #000000;
-}
-.link-bitbucket {
-  color: #205081;
-}
-.link-bitbucket:hover,
-.link-bitbucket:focus {
-  text-decoration: none;
-  color: #163758;
-}
-.card-skills {
-  position: relative;
-}
-.skill-level {
-  border-radius: 3px;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 0;
-  width: 10px;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
-}
-.skill-level .skill-progress {
-  position: absolute;
-  border-radius: 3px;
-  bottom: 0;
-  width: 100%;
-  -webkit-transition: height 1s ease;
-}
-.skill-level .skill-progress.beginner {
-  height: 50%;
-  background: #e74c3c;
-}
-.skill-level .skill-progress.intermediate {
-  height: 70%;
-  background: #f1c40f;
-}
-.skill-level .skill-progress.advanced {
-  height: 80%;
-  background: #428bca;
-}
-.skill-level .skill-progress.master {
-  height: 95%;
-  background: #5cb85c;
-}
-.skill-info {
-  margin-left: 10px;
-}
-@media (max-width: 480px) {
-  .skill-info {
-    margin-left: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .quote {
-    font-size: inherit;
-  }
-}
-@media print {
-  a[href]:after {
-    content: none !important;
-  }
-  .profile-card {
-    text-align: center;
-  }
-  .profile-pic {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .profile-pic img {
-    border-radius: 0;
-  }
-  .name-and-profession {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 15px;
-  }
-  .contact-details .detail {
-    position: relative;
-    float: left;
-    width: 25%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 0;
-  }
-  .floating-nav,
-  .floating-nav-trigger {
-    display: none;
-  }
-  .pagebreak {
-    page-break-before: always;
-  }
-}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Mañá</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <style>
+    .clear-margin {
+      margin: 0;
+    }
 
-    </style>
-  </head>
+    .space-top {
+      margin-top: 10px;
+    }
 
-  <body itemscope itemtype="http://schema.org/Person">
-    <script>
-      window.onload = function () {
-        var toggleFloatingMenu = function() {
-          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
-          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
-        };
+    .space-right {
+      margin-right: 10px;
+    }
 
-        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
-        $( ".js-tooltip" ).tooltip();
-        $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
-          e.preventDefault();
-          toggleFloatingMenu();
-        });
-        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+    .icon-left {
+      margin-right: 5px;
+    }
+
+    .icon-right {
+      margin-left: 5px;
+    }
+
+    .labels {
+      word-spacing: 5px;
+      line-height: 2;
+    }
+
+    .label-keyword {
+      display: inline-block;
+      background: #7eb0db;
+      color: white;
+      font-size: 0.9em;
+      padding: 5px;
+      border: 1px solid #357ebd;
+    }
+
+    .link-disguise {
+      color: inherit;
+    }
+
+    .link-disguise:hover {
+      color: inherit;
+    }
+
+    @media (max-width: 992px) {
+      .clear-margin-sm {
+        margin-bottom: 0;
       }
-    </script>
-    <div class="container-fluid">
-      <div class="row main clearfix">
-        <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
-          <i class="fa fa-bars"></i>
-          <span class="close-icon">&times;</span>
-        </a>
-        <nav class="floating-nav js-floating-nav">
-          <ul class="list-unstyled">
-            <li>
-              <a href="#about">
-                <i class="fa fa-user"></i>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#work-experience">
-                <i class="fa fa-building"></i>
-                Work Experience
-              </a>
-            </li>
-            <li>
-              <a href="#skills">
-                <i class="fa fa-code"></i>
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#education">
-                <i class="fa fa-mortar-board"></i>
-                Education
-              </a>
-            </li>
-          </ul>
-        </nav>
+    }
 
-        <section class="col-md-3 card-wrapper profile-card-wrapper affix">
-          <div class="card profile-card">
+    body {
+      font-family: 'Lato';
+      background: #f0f0f0;
+      color: #333333;
+    }
+
+    .main {
+      padding: 5px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 3px;
+      min-height: 300px;
+      padding: 10px;
+    }
+
+    .card-nested {
+      min-height: 0;
+      margin-bottom: 10px;
+      border-width: 1px 0 0 0;
+    }
+
+    .card-nested:before,
+    .card-nested:after {
+      content: " ";
+      display: table;
+    }
+
+    .card-nested:after {
+      clear: both;
+    }
+
+    @media (max-width: 480px) {
+      .card-nested {
+        padding: 5px 0;
+      }
+    }
+
+    .background-card {
+      padding: 10px 20px;
+    }
+
+    .card-wrapper {
+      padding: 5px;
+    }
+
+    @media (max-width: 992px) {
+      .card-wrapper {
+        float: none !important;
+      }
+    }
+
+    .text-bolder {
+      font-weight: bold;
+    }
+
+    .background-details .detail {
+      display: table;
+      padding: 10px 0;
+    }
+
+    .background-details .detail .icon {
+      min-width: 45px;
+      max-width: 45px;
+      text-align: center;
+    }
+
+    .background-details .detail .info {
+      width: 100%;
+    }
+
+    .background-details .detail .title,
+    .background-details .detail .icon {
+      color: #707070;
+    }
+
+    .background-details .detail .mobile-title {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .background-details .detail .mobile-title {
+        display: inline-block;
+        margin-left: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        vertical-align: middle;
+      }
+    }
+
+    .background-details .detail .icon,
+    .background-details .detail .info {
+      display: table-cell;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 480px) {
+      .background-details .detail {
+        display: block;
+      }
+
+      .background-details .detail .icon {
+        max-width: inherit;
+        min-width: inherit;
+        text-align: left;
+      }
+
+      .background-details .detail .icon,
+      .background-details .detail .info {
+        display: block;
+        padding: 10px 0;
+      }
+
+      .background-details .detail .title {
+        display: none;
+      }
+    }
+
+    .info .content.has-sidebar {
+      width: 80%;
+      box-sizing: border-box;
+      float: left;
+      padding: 0 10px;
+      border-right: 1px solid #cdcdcd;
+    }
+
+    @media (max-width: 992px) {
+      .info .content.has-sidebar {
+        width: 100%;
+        border-right: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .info .content.has-sidebar {
+        padding: 0 2px;
+      }
+    }
+
+    .info .sidebar {
+      margin-left: 80%;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    @media (max-width: 480px) {
+      ul {
+        padding-left: 25px;
+      }
+    }
+
+    /*
+        Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
+    */
+    .floating-nav-trigger {
+      width: 50px;
+      height: 50px;
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      -webkit-transition: background-color 0.5s ease;
+      -o-transition: background-color 0.5s ease;
+      transition: background-color 0.5s ease;
+      display: block;
+      border-radius: 50%;
+      text-align: center;
+      padding-top: 10px;
+      background-color: white;
+      font-size: 1.5em;
+      color: #357ebd;
+      z-index: 100;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .floating-nav-trigger .close-icon {
+      display: none;
+    }
+
+    .floating-nav-trigger:hover {
+      color: #1f496e;
+      background-color: #e6e6e6;
+      text-decoration: none;
+    }
+
+    .floating-nav-trigger.is-open {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .floating-nav-trigger.is-open .close-icon {
+      display: inherit;
+    }
+
+    .floating-nav-trigger.is-open .fa-bars {
+      display: none;
+    }
+
+    .floating-nav-trigger.is-open:hover {
+      background-color: white;
+    }
+
+    .floating-nav {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+      -webkit-transform-origin: 100% 100%;
+      -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      -webkit-transition: transform 0.3s, visibility 0s 0.3s;
+      -o-transition: transform 0.3s, visibility 0s 0.3s;
+      transition: transform 0.3s, visibility 0s 0.3s;
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      position: fixed;
+      z-index: 50;
+      right: 10px;
+      bottom: 10px;
+      background-color: white;
+      width: 90%;
+      max-width: 400px;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    .floating-nav ul {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .floating-nav ul li {
+      border-bottom: 1px solid #eff2f6;
+    }
+
+    .floating-nav ul li a {
+      padding: 20px;
+      text-decoration: none;
+      color: #357ebd;
+      display: block;
+    }
+
+    .floating-nav ul li a:hover {
+      color: #1f496e;
+    }
+
+    .floating-nav ul li i.fa {
+      margin-right: 10px;
+    }
+
+    .floating-nav ul li:last-child {
+      border-bottom: 0;
+    }
+
+    .floating-nav.is-visible {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: transform 0.3s, visibility 0s 0s;
+      -o-transition: transform 0.3s, visibility 0s 0s;
+      transition: transform 0.3s, visibility 0s 0s;
+      visibility: visible;
+    }
+
+    @media (max-width: 992px) {
+      .profile-card-wrapper {
+        position: relative;
+      }
+    }
+
+    .profile-pic {
+      padding: 20px 0;
+    }
+
+    @media (max-width: 992px) {
+      .profile-pic {
+        padding: 10px 0;
+      }
+    }
+
+    .profile-pic img {
+      width: 100px;
+      height: 100px;
+    }
+
+    @media (max-width: 992px) {
+      .name {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-details {
+        text-align: center;
+      }
+    }
+
+    .contact-details .detail {
+      display: table;
+      padding: 10px 0;
+    }
+
+    .contact-details .detail .icon {
+      padding: 0 10px;
+      color: #707070;
+    }
+
+    @media (max-width: 992px) {
+      .contact-details .detail .icon {
+        padding: 0 5px 0 0;
+      }
+    }
+
+    .contact-details .detail .info {
+      font-size: 0.8em;
+    }
+
+    .contact-details .detail .icon,
+    .contact-details .detail .info {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .contact-details .detail {
+        position: relative;
+        float: left;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .contact-details .detail {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding: 10px;
+      }
+
+      .contact-details .detail .icon,
+      .contact-details .detail .info {
+        display: inline-block;
+      }
+    }
+
+    @media (max-width: 992px) and (min-width: 768px) {
+      .contact-details .detail {
+        float: left;
+        width: 25%;
+      }
+    }
+
+    .social-links {
+      line-height: 2.5;
+    }
+
+    .social-link {
+      margin-left: 5px;
+      min-width: 35px;
+      display: inline-block;
+    }
+
+    .social-link:first-child {
+      margin-left: 0;
+    }
+
+    .social-link:hover {
+      text-decoration: none;
+    }
+
+    .link-github {
+      color: #454545;
+    }
+
+    .link-github:hover,
+    .link-github:focus {
+      text-decoration: none;
+      color: #2b2b2b;
+    }
+
+    .link-twitter {
+      color: #33ccff;
+    }
+
+    .link-twitter:hover,
+    .link-twitter:focus {
+      text-decoration: none;
+      color: #00bfff;
+    }
+
+    .link-blog {
+      color: #f36f24;
+    }
+
+    .link-blog:hover,
+    .link-blog:focus {
+      text-decoration: none;
+      color: #d8560c;
+    }
+
+    .link-linkedin {
+      color: #007bb6;
+    }
+
+    .link-linkedin:hover,
+    .link-linkedin:focus {
+      text-decoration: none;
+      color: #005983;
+    }
+
+    .link-skype {
+      color: #12a5f4;
+    }
+
+    .link-skype:hover,
+    .link-skype:focus {
+      text-decoration: none;
+      color: #0986ca;
+    }
+
+    .link-stackoverflow {
+      color: #8e8e92;
+    }
+
+    .link-stackoverflow:hover,
+    .link-stackoverflow:focus {
+      text-decoration: none;
+      color: #747479;
+    }
+
+    .link-soundcloud {
+      color: #e8822d;
+    }
+
+    .link-soundcloud:hover,
+    .link-soundcloud:focus {
+      text-decoration: none;
+      color: #cc6916;
+    }
+
+    .link-pinterest {
+      color: #bd091f;
+    }
+
+    .link-pinterest:hover,
+    .link-pinterest:focus {
+      text-decoration: none;
+      color: #8c0717;
+    }
+
+    .link-vimeo {
+      color: #17b3e8;
+    }
+
+    .link-vimeo:hover,
+    .link-vimeo:focus {
+      text-decoration: none;
+      color: #128fba;
+    }
+
+    .link-behance {
+      color: #2c98cf;
+    }
+
+    .link-behance:hover,
+    .link-behance:focus {
+      text-decoration: none;
+      color: #2379a5;
+    }
+
+    .link-codepen {
+      color: #1c1c1c;
+    }
+
+    .link-codepen:hover,
+    .link-codepen:focus {
+      text-decoration: none;
+      color: #020202;
+    }
+
+    .link-foursquare {
+      color: #fa4778;
+    }
+
+    .link-foursquare:hover,
+    .link-foursquare:focus {
+      text-decoration: none;
+      color: #f91554;
+    }
+
+    .link-reddit {
+      color: #545454;
+    }
+
+    .link-reddit:hover,
+    .link-reddit:focus {
+      text-decoration: none;
+      color: #3b3b3b;
+    }
+
+    .link-spotify {
+      color: #acd200;
+    }
+
+    .link-spotify:hover,
+    .link-spotify:focus {
+      text-decoration: none;
+      color: #829f00;
+    }
+
+    .link-dribbble {
+      color: #ce366f;
+    }
+
+    .link-dribbble:hover,
+    .link-dribbble:focus {
+      text-decoration: none;
+      color: #a82959;
+    }
+
+    .link-facebook {
+      color: #4b6daa;
+    }
+
+    .link-facebook:hover,
+    .link-facebook:focus {
+      text-decoration: none;
+      color: #3b5687;
+    }
+
+    .link-angellist {
+      color: #000000;
+    }
+
+    .link-angellist:hover,
+    .link-angellist:focus {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .link-bitbucket {
+      color: #205081;
+    }
+
+    .link-bitbucket:hover,
+    .link-bitbucket:focus {
+      text-decoration: none;
+      color: #163758;
+    }
+
+    .card-skills {
+      position: relative;
+    }
+
+    .skill-level {
+      border-radius: 3px;
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 0;
+      width: 10px;
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-level .skill-progress {
+      position: absolute;
+      border-radius: 3px;
+      bottom: 0;
+      width: 100%;
+      -webkit-transition: height 1s ease;
+    }
+
+    .skill-level .skill-progress.beginner {
+      height: 50%;
+      background: #e74c3c;
+    }
+
+    .skill-level .skill-progress.intermediate {
+      height: 70%;
+      background: #f1c40f;
+    }
+
+    .skill-level .skill-progress.advanced {
+      height: 80%;
+      background: #428bca;
+    }
+
+    .skill-level .skill-progress.master {
+      height: 95%;
+      background: #5cb85c;
+    }
+
+    .skill-info {
+      margin-left: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .skill-info {
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .quote {
+        font-size: inherit;
+      }
+    }
+
+    @media print {
+      a[href]:after {
+        content: none !important;
+      }
+
+      .profile-card {
+        text-align: center;
+      }
+
+      .profile-pic {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .profile-pic img {
+        border-radius: 0;
+      }
+
+      .name-and-profession {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+      }
+
+      .contact-details .detail {
+        position: relative;
+        float: left;
+        width: 25%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding: 0;
+      }
+
+      .floating-nav,
+      .floating-nav-trigger {
+        display: none;
+      }
+
+      .pagebreak {
+        page-break-before: always;
+      }
+    }
+
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/Person">
+<script>
+  window.onload = function () {
+    var toggleFloatingMenu = function () {
+      $('.js-floating-nav').toggleClass('is-visible');
+      $('.js-floating-nav-trigger').toggleClass('is-open');
+    };
+
+    $(".background-card").css("min-height", window.screen.availHeight + "px");
+    $(".js-tooltip").tooltip();
+    $('.js-floating-nav-trigger').on('click', function (e) {
+      e.preventDefault();
+      toggleFloatingMenu();
+    });
+    $('.js-floating-nav a').on('click', toggleFloatingMenu);
+  }
+</script>
+<div class="container-fluid">
+  <div class="row main clearfix">
+    <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+      <i class="fa fa-bars"></i>
+      <span class="close-icon">&times;</span>
+    </a>
+    <nav class="floating-nav js-floating-nav">
+      <ul class="list-unstyled">
+        <li>
+          <a href="#about">
+            <i class="fa fa-user"></i>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#work-experience">
+            <i class="fa fa-building"></i>
+            Work Experience
+          </a>
+        </li>
+        <li>
+          <a href="#skills">
+            <i class="fa fa-code"></i>
+            Skills
+          </a>
+        </li>
+        <li>
+          <a href="#education">
+            <i class="fa fa-mortar-board"></i>
+            Education
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="col-md-3 card-wrapper profile-card-wrapper affix">
+      <div class="card profile-card">
               <span class="profile-pic-container">
                 <div class="profile-pic">
-                  <img class="media-object img-circle center-block"  data-src="holder.js"
-                    alt="Daniel Mañá" src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/7/005/05e/09f/1bddf5e.jpg" itemprop="image">
+                  <img class="media-object img-circle center-block" data-src="holder.js"
+                       alt="Daniel Mañá"
+                       src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/7/005/05e/09f/1bddf5e.jpg"
+                       itemprop="image">
                 </div>
 
                 <div class="name-and-profession">
@@ -660,11 +786,11 @@ body {
                   <h5 class="text-muted text-center" itemprop="jobTitle">Full-stack Developer</h5>
                 </div>
               </span>
-              <hr>
+        <hr>
 
-              <div class="contact-details clearfix">
+        <div class="contact-details clearfix">
 
-                  <div class="detail">
+          <div class="detail">
                     <span class="icon">
                       <i class="fa fa-lg fa-location-arrow"></i>
                     </span>
@@ -673,9 +799,9 @@ body {
                         Wilczyce, Wrocław,
                         Poland
                       </span>
-                  </div>
+          </div>
 
-                  <div class="detail">
+          <div class="detail">
                     <span class="icon">
                       <i class="fa fa-lg fa-phone"></i>
                     </span>
@@ -683,9 +809,9 @@ body {
                     <span class="info" itemprop="telephone">
                       +48 570 000 381
                     </span>
-                  </div>
+          </div>
 
-                  <div class="detail">
+          <div class="detail">
                     <span class="icon">
                       <i class="fa fa-lg fa-envelope"></i>
                     </span>
@@ -693,9 +819,9 @@ body {
                     <span class="info">
                       <a href="mailto:daniel81bcn@gmail.com" class="link-disguise" itemprop="email">daniel81bcn@gmail.com</a>
                     </span>
-                  </div>
+          </div>
 
-                  <div class="detail">
+          <div class="detail">
                     <span class="icon" title="Languages I speak">
                       <i class="fa fa-lg fa-language"></i>
                     </span>
@@ -703,61 +829,65 @@ body {
                     <span class="info">
                       English, Spanish, Catalan
                     </span>
-                  </div>
-              </div>
-
-              <hr>
-
-              <div class="social-links text-center">
-                  <a class="fa fa-linkedin fa-2x social-link link-linkedin"
-                       href="http://www.linkedin.com/in/daniel81bcn" target="_blank"></a>
-                  <a class="fa fa-github fa-2x social-link link-github"
-                       href="//github.com/daniel81bcn" target="_blank"></a>
-                  <a class="fa fa-bitbucket fa-2x social-link link-bitbucket" href="//bitbucket.org/daniel81bcn" target="_blank"></a>
-              </div>
           </div>
-        </section>
+        </div>
 
-        <section class="col-md-9 card-wrapper pull-right">
-          <div class="card background-card">
-            <h4 class="text-uppercase text-bolder">Background</h4>
-            <hr>
+        <hr>
 
-            <div class="background-details">
-              <div class="detail" id="about">
-                <div class="icon">
-                  <i class="fa fa-lg fa-user"></i>
-                  <span class="mobile-title">About</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    About
-                  </h4>
+        <div class="social-links text-center">
+          <a class="fa fa-linkedin fa-2x social-link link-linkedin"
+             href="http://www.linkedin.com/in/daniel81bcn" target="_blank"></a>
+          <a class="fa fa-github fa-2x social-link link-github"
+             href="//github.com/daniel81bcn" target="_blank"></a>
+          <a class="fa fa-bitbucket fa-2x social-link link-bitbucket" href="//bitbucket.org/daniel81bcn"
+             target="_blank"></a>
+        </div>
+      </div>
+    </section>
 
-                  <div class="content" itemprop="description">
-                    Full-stack Web Developer with extensive Video Streaming knowledge. Worked for few years as a Scrum Master and implemented several start-up MVPs applying the Lean Startup strategy.
-                  </div>
-                </div>
+    <section class="col-md-9 card-wrapper pull-right">
+      <div class="card background-card">
+        <h4 class="text-uppercase text-bolder">Background</h4>
+        <hr>
+
+        <div class="background-details">
+          <div class="detail" id="about">
+            <div class="icon">
+              <i class="fa fa-lg fa-user"></i>
+              <span class="mobile-title">About</span>
+            </div>
+            <div class="info">
+              <h4 class="title text-uppercase">
+                About
+              </h4>
+
+              <div class="content" itemprop="description">
+                Full-stack Web Developer with extensive Video Streaming knowledge. Worked for few years
+                as a Scrum Master and implemented several start-up MVPs applying the Lean Startup
+                strategy.
               </div>
+            </div>
+          </div>
 
-              <div class="detail" id="work-experience">
-                <div class="icon">
-                  <i class="fa fa-lg fa-building"></i>
-                  <span class="mobile-title">Work Experience</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Work Experience
-                  </h4>
+          <div class="detail" id="work-experience">
+            <div class="icon">
+              <i class="fa fa-lg fa-building"></i>
+              <span class="mobile-title">Work Experience</span>
+            </div>
+            <div class="info">
+              <h4 class="title text-uppercase">
+                Work Experience
+              </h4>
 
-                  <ul class="list-unstyled">
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Freelance Full-stack Developer</strong>,&nbsp;Flumotion
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+              <ul class="list-unstyled">
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Freelance Full-stack Developer</strong>,&nbsp;Flumotion
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Nov, 2014 -
                                   Present
@@ -767,39 +897,42 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   2 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Adding features to the Online Video Platform.</p>
-                            <ul>
-                                <li> Yeoman, AngularJS, JW Player, Video.js, Bootstrap, Material Design. </li>
-                                <li> Python - Django REST Framework. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Adding features to the Online Video Platform.</p>
+                    <ul>
+                      <li> Yeoman, AngularJS, JW Player, Video.js, Bootstrap, Material Design.
+                      </li>
+                      <li> Python - Django REST Framework.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Nov, 2014
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Nov, 2014
+                    </p>
 
-                            <p>
+                    <p>
                                 <span class="label label-success">
                                   Currently Working
                                 </span>
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              2 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Freelance Front-end Engineer</strong>,&nbsp;YadaZing
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      2 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Freelance Front-end Engineer</strong>,&nbsp;YadaZing
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Jul, 2014 -
                                   Oct, 2014
@@ -809,38 +942,40 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   3 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Created English lessons using Youtube videos.</p>
-                            <ul>
-                                <li> Yeoman, AngularJS, Video.js, Bootstrap. </li>
-                                <li> Youtube API, Heap Analytics, Intercom. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Created English lessons using Youtube videos.</p>
+                    <ul>
+                      <li> Yeoman, AngularJS, Video.js, Bootstrap.</li>
+                      <li> Youtube API, Heap Analytics, Intercom.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Jul, 2014
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Jul, 2014
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Oct, 2014
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              3 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Front-end Engineer</strong>,&nbsp;Flumotion
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Oct, 2014
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      3 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Front-end Engineer</strong>,&nbsp;Flumotion
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Oct, 2011 -
                                   Nov, 2014
@@ -850,39 +985,43 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   3 years 1 month
                                 </span>
-                            </small>
-                          </p>
-                          <p>Developed extensive front-end solutions for the Online Video &amp; Radio Platform.</p>
-                            <ul>
-                                <li> Yeoman, Require.js, AngularJS, Backbone.js, ActionScript, Bootstrap. </li>
-                                <li> Strobe Media Playback, Video.js, VAST. </li>
-                                <li> Node.js, Python - Django REST Framework, MySQL, Nginx. </li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Oct, 2011
-                            </p>
-
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Nov, 2014
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              3 years 1 month
-                            </p>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Developed extensive front-end solutions for the Online Video &amp; Radio
+                      Platform.</p>
+                    <ul>
+                      <li> Yeoman, Require.js, AngularJS, Backbone.js, ActionScript, Bootstrap.
                       </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Freelance Full-stack Developer</strong>,&nbsp;Medistream.tv
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                      <li> Strobe Media Playback, Video.js, VAST.</li>
+                      <li> Node.js, Python - Django REST Framework, MySQL, Nginx.</li>
+                    </ul>
+                  </div>
+
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Oct, 2011
+                    </p>
+
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Nov, 2014
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      3 years 1 month
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Freelance Full-stack Developer</strong>,&nbsp;Medistream.tv
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 May, 2014 -
                                   Sep, 2014
@@ -892,38 +1031,40 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   4 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Developed the first MVP of the product and added some functionality.</p>
-                            <ul>
-                                <li> Yeoman, AngularJS, Bootstrap, Stripe. </li>
-                                <li> Node.js, Python - Django REST Framework, MongoDB, MySQL, Nginx. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Developed the first MVP of the product and added some functionality.</p>
+                    <ul>
+                      <li> Yeoman, AngularJS, Bootstrap, Stripe.</li>
+                      <li> Node.js, Python - Django REST Framework, MongoDB, MySQL, Nginx.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              May, 2014
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      May, 2014
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Sep, 2014
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              4 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Freelance Android Developer</strong>,&nbsp;NicePeopleAtWork
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Sep, 2014
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      4 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Freelance Android Developer</strong>,&nbsp;NicePeopleAtWork
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Apr, 2014 -
                                   Jun, 2014
@@ -933,37 +1074,39 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   2 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Developed a plugin for Android video players to track viewers experience.</p>
-                            <ul>
-                                <li> Android Development, Widevine. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Developed a plugin for Android video players to track viewers experience.</p>
+                    <ul>
+                      <li> Android Development, Widevine.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Apr, 2014
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Apr, 2014
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Jun, 2014
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              2 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Freelance Flash Developer</strong>,&nbsp;Wuaki.tv
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Jun, 2014
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      2 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Freelance Flash Developer</strong>,&nbsp;Wuaki.tv
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Dec, 2012 -
                                   Jan, 2013
@@ -973,37 +1116,39 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   1 month
                                 </span>
-                            </small>
-                          </p>
-                          <p>I18n and analytics service integration.</p>
-                            <ul>
-                                <li> ActionScript, Strobe Media Playback 1.6, OSMF 2.0, Conviva. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>I18n and analytics service integration.</p>
+                    <ul>
+                      <li> ActionScript, Strobe Media Playback 1.6, OSMF 2.0, Conviva.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Dec, 2012
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Dec, 2012
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Jan, 2013
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              1 month
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Flex Developer</strong>,&nbsp;Flumotion
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Jan, 2013
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      1 month
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Flex Developer</strong>,&nbsp;Flumotion
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Feb, 2010 -
                                   Oct, 2011
@@ -1013,37 +1158,40 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   1 year 8 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Designed and developed CMS for the WebTV Online Video &amp; Radio Platform.</p>
-                            <ul>
-                                <li> Flex, Swiz Framework, Flash CS5.5, Python - Django. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Designed and developed CMS for the WebTV Online Video &amp; Radio
+                      Platform.</p>
+                    <ul>
+                      <li> Flex, Swiz Framework, Flash CS5.5, Python - Django.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Feb, 2010
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Feb, 2010
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Oct, 2011
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              1 year 8 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Project Manager and Full-stack Developer</strong>,&nbsp;CASER
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Oct, 2011
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      1 year 8 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Project Manager and Full-stack Developer</strong>,&nbsp;CASER
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Sep, 2008 -
                                   Dec, 2009
@@ -1053,38 +1201,41 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   1 year 3 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Managed 4 developers and worked together implementing an Insurance Solution for the automotive industry.</p>
-                            <ul>
-                                <li> Flex, Cairngorm, BlazeDS. </li>
-                                <li> Java 5, JDBC, Oracle, WebLogic 10.1. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Managed 4 developers and worked together implementing an Insurance Solution
+                      for the automotive industry.</p>
+                    <ul>
+                      <li> Flex, Cairngorm, BlazeDS.</li>
+                      <li> Java 5, JDBC, Oracle, WebLogic 10.1.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Sep, 2008
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Sep, 2008
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Dec, 2009
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              1 year 3 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Web Developer</strong>,&nbsp;Software Greenhouse
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Dec, 2009
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      1 year 3 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Web Developer</strong>,&nbsp;Software Greenhouse
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Mar, 2008 -
                                   Sep, 2008
@@ -1094,37 +1245,40 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   6 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Analysed, designed and developed new features for several distributed applications for work management.</p>
-                            <ul>
-                                <li> J2EE, Struts, Java 5, Hibernate 3.0, SQLServer, Tomcat 6. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Analysed, designed and developed new features for several distributed
+                      applications for work management.</p>
+                    <ul>
+                      <li> J2EE, Struts, Java 5, Hibernate 3.0, SQLServer, Tomcat 6.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Mar, 2008
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Mar, 2008
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Sep, 2008
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              6 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Freelance Full-stack Developer</strong>,&nbsp;Software Greenhouse
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Sep, 2008
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      6 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Freelance Full-stack Developer</strong>,&nbsp;Software Greenhouse
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Sep, 2007 -
                                   Feb, 2008
@@ -1134,37 +1288,40 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   5 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Developed an eCommerce store including architecture design, documentation, testing and deployment.</p>
-                            <ul>
-                                <li> J2EE, Struts, Java 5, Hibernate 3, MySQL, Tomcat 6. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Developed an eCommerce store including architecture design, documentation,
+                      testing and deployment.</p>
+                    <ul>
+                      <li> J2EE, Struts, Java 5, Hibernate 3, MySQL, Tomcat 6.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Sep, 2007
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Sep, 2007
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Feb, 2008
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              5 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Software Developer</strong>,&nbsp;Nestle
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Feb, 2008
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      5 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Software Developer</strong>,&nbsp;Nestle
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Mar, 2007 -
                                   Aug, 2007
@@ -1174,37 +1331,41 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   5 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Developed a module to interface between various document templates and unify formats and methodologies among the various departments.</p>
-                            <ul>
-                                <li> Crystal Reports, .NET, J#, Acces, Excel. </li>
-                            </ul>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Developed a module to interface between various document templates and unify
+                      formats and methodologies among the various departments.</p>
+                    <ul>
+                      <li> Crystal Reports, .NET, J#, Acces, Excel.</li>
+                    </ul>
+                  </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Mar, 2007
-                            </p>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Mar, 2007
+                    </p>
 
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Aug, 2007
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              5 months
-                            </p>
-                        </div>
-                      </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>System Manager and Software Developer</strong>,&nbsp;CCRTV Interactiva
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Aug, 2007
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      5 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>System Manager and Software Developer</strong>,&nbsp;CCRTV
+                      Interactiva
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 Sep, 2004 -
                                   Feb, 2007
@@ -1214,37 +1375,44 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   2 years 5 months
                                 </span>
-                            </small>
-                          </p>
-                          <p>Maintenance of several multimedia and digital video projects, created cronjobs for scheduled FTP and Terrestrial Digital Television applications updating (TDT - TV3i), and monitored systems and teletext subtitling. 200.000+ registered users.</p>
-                            <ul>
-                                <li> J2EE, Struts, Java 1.4 - 5, JDBC, Oracle, Tomcat 5.5 - 6, Nagios, Linux shell scripting. </li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              Sep, 2004
-                            </p>
-
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Feb, 2007
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              2 years 5 months
-                            </p>
-                        </div>
+                      </small>
+                    </p>
+                    <p>Maintenance of several multimedia and digital video projects, created
+                      cronjobs for scheduled FTP and Terrestrial Digital Television applications
+                      updating (TDT - TV3i), and monitored systems and teletext subtitling.
+                      200.000+ registered users.</p>
+                    <ul>
+                      <li> J2EE, Struts, Java 1.4 - 5, JDBC, Oracle, Tomcat 5.5 - 6, Nagios, Linux
+                        shell scripting.
                       </li>
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Audiovisual Technician</strong>,&nbsp;Forum Barcelona 2004
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
+                    </ul>
+                  </div>
+
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      Sep, 2004
+                    </p>
+
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Feb, 2007
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      2 years 5 months
+                    </p>
+                  </div>
+                </li>
+                <li class="card card-nested clearfix">
+                  <div class="content has-sidebar">
+                    <p class="clear-margin-sm">
+                      <strong>Audiovisual Technician</strong>,&nbsp;Forum Barcelona 2004
+                    </p>
+
+                    <p class="text-muted visible-xs visible-sm">
+                      <small>
                               <span class="space-right">
                                 May, 2004 -
                                   Sep, 2004
@@ -1254,253 +1422,264 @@ body {
                                   <i class="fa fa-clock-o icon-left"></i>
                                   4 months
                                 </span>
-                            </small>
-                          </p>
-                          <p></p>
-                        </div>
-
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              May, 2004
-                            </p>
-
-                            <p>
-                                <strong>Left:</strong>&nbsp;
-                                Sep, 2004
-                            </p>
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              4 months
-                            </p>
-                        </div>
-                      </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="detail" id="skills">
-                <div class="icon">
-                  <i class="fa fa-lg fa-code"></i>
-                  <span class="mobile-title">Skills</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Skills
-                  </h4>
-
-                  <div class="content">
-                    <ul class="list-unstyled">
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Methodologies</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Scrum</span>
-                                <span class="label label-keyword">Kanban</span>
-                                <span class="label label-keyword">Lean Startup</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Architecture</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Yeoman</span>
-                                <span class="label label-keyword">Require.js</span>
-                                <span class="label label-keyword">Grunt</span>
-                                <span class="label label-keyword">Gulp</span>
-                                <span class="label label-keyword">Bower</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>UI/UX Design</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Bootstrap</span>
-                                <span class="label label-keyword">Material Design</span>
-                                <span class="label label-keyword">Font Awesome</span>
-                                <span class="label label-keyword">SASS</span>
-                                <span class="label label-keyword">LESS</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Front-end Development</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">jQuery</span>
-                                <span class="label label-keyword">AngularJS</span>
-                                <span class="label label-keyword">Backbone.js</span>
-                                <span class="label label-keyword">ActionScript</span>
-                                <span class="label label-keyword">Cross-browser development</span>
-                                <span class="label label-keyword">Karma</span>
-                                <span class="label label-keyword">Protractor</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Advanced" data-placement="left">
-                              <div class="skill-progress advanced">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Back-end Development</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Node.js</span>
-                                <span class="label label-keyword">Python</span>
-                                <span class="label label-keyword">Django REST Framework</span>
-                                <span class="label label-keyword">Java</span>
-                                <span class="label label-keyword">RESTful APIs</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Intermediate" data-placement="left">
-                              <div class="skill-progress intermediate">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Data Modeling</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">MySQL</span>
-                                <span class="label label-keyword">MongoDB</span>
-                                <span class="label label-keyword">PL/SQL</span>
-                                <span class="label label-keyword">Django-South</span>
-                                <span class="label label-keyword">Hibernate</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Intermediate" data-placement="left">
-                              <div class="skill-progress intermediate">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Server and Hosting Environment</strong>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Linux Shell Scripting</span>
-                                <span class="label label-keyword">Apache</span>
-                                <span class="label label-keyword">Nginx</span>
-                                <span class="label label-keyword">Heroku</span>
-                            </div>
-                          </div>
-                        </li>
-                    </ul>
+                      </small>
+                    </p>
+                    <p></p>
                   </div>
-                </div>
-              </div>
 
-              <div class="detail" id="education">
-                <div class="icon">
-                  <i class="fa fa-lg fa-mortar-board"></i>
-                  <span class="mobile-title">Education</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Education
-                  </h4>
+                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                    <p>
+                      <strong>Joined:</strong>&nbsp;
+                      May, 2004
+                    </p>
 
-                  <div class="content">
-                    <ul class="list-unstyled">
-                        <li class="card card-nested">
-                          <div class="content has-sidebar">
-                            <p class="clear-margin-sm">
-                              <strong>IT, Thesis</strong>,&nbsp;
-                              Universitat Politècnica de Catalunya
-                            </p>
-                            <p class="visible-xs visible-sm text-muted">
-                              <small>
-                                Jan, 2005 -
-                                  Jan, 2006
-                              </small>
-                            </p>
-                            <i>Qualification: 9,5 out of 10.</i>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Java</span>
-                                <span class="label label-keyword">Java3D-OpenGL</span>
-                                <span class="label label-keyword">MVC Architecture</span>
-                            </div>
-                          </div>
-                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Started:</strong>&nbsp;
-                              Jan, 2005
-                            </p>
-                            <p>
-                                <strong>Completion:</strong>&nbsp;
-                                Jan, 2006
-                            </p>
-                          </div>
-                        </li>
-                        <li class="card card-nested">
-                          <div class="content has-sidebar">
-                            <p class="clear-margin-sm">
-                              <strong>IT, Bachelor&#x27;s degree</strong>,&nbsp;
-                              Universitat Politècnica de Catalunya
-                            </p>
-                            <p class="visible-xs visible-sm text-muted">
-                              <small>
-                                Jan, 2000 -
-                                  Jan, 2006
-                              </small>
-                            </p>
-                            <i></i>
-                            <div class="space-top labels">
-                            </div>
-                          </div>
-                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Started:</strong>&nbsp;
-                              Jan, 2000
-                            </p>
-                            <p>
-                                <strong>Completion:</strong>&nbsp;
-                                Jan, 2006
-                            </p>
-                          </div>
-                        </li>
-                    </ul>
+                    <p>
+                      <strong>Left:</strong>&nbsp;
+                      Sep, 2004
+                    </p>
+
+                    <p>
+                      <i class="fa fa-clock-o icon-left"></i>
+                      4 months
+                    </p>
                   </div>
-                </div>
-              </div>
-
-
-
-
-
-
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
-      </div>
-    </div>
 
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
-  </body>
+          <div class="detail" id="skills">
+            <div class="icon">
+              <i class="fa fa-lg fa-code"></i>
+              <span class="mobile-title">Skills</span>
+            </div>
+            <div class="info">
+              <h4 class="title text-uppercase">
+                Skills
+              </h4>
+
+              <div class="content">
+                <ul class="list-unstyled">
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Master" data-placement="left">
+                      <div class="skill-progress master">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>Methodologies</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Scrum</span>
+                        <span class="label label-keyword">Kanban</span>
+                        <span class="label label-keyword">Lean Startup</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Master" data-placement="left">
+                      <div class="skill-progress master">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>Architecture</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Yeoman</span>
+                        <span class="label label-keyword">Require.js</span>
+                        <span class="label label-keyword">Grunt</span>
+                        <span class="label label-keyword">Gulp</span>
+                        <span class="label label-keyword">Bower</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Master" data-placement="left">
+                      <div class="skill-progress master">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>UI/UX Design</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Bootstrap</span>
+                        <span class="label label-keyword">Material Design</span>
+                        <span class="label label-keyword">Font Awesome</span>
+                        <span class="label label-keyword">SASS</span>
+                        <span class="label label-keyword">LESS</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Master" data-placement="left">
+                      <div class="skill-progress master">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>Front-end Development</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">jQuery</span>
+                        <span class="label label-keyword">AngularJS</span>
+                        <span class="label label-keyword">Backbone.js</span>
+                        <span class="label label-keyword">ActionScript</span>
+                        <span class="label label-keyword">Cross-browser development</span>
+                        <span class="label label-keyword">Karma</span>
+                        <span class="label label-keyword">Protractor</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Advanced" data-placement="left">
+                      <div class="skill-progress advanced">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>Back-end Development</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Node.js</span>
+                        <span class="label label-keyword">Python</span>
+                        <span class="label label-keyword">Django REST Framework</span>
+                        <span class="label label-keyword">Java</span>
+                        <span class="label label-keyword">RESTful APIs</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Intermediate" data-placement="left">
+                      <div class="skill-progress intermediate">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>Data Modeling</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">MySQL</span>
+                        <span class="label label-keyword">MongoDB</span>
+                        <span class="label label-keyword">PL/SQL</span>
+                        <span class="label label-keyword">Django-South</span>
+                        <span class="label label-keyword">Hibernate</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card card-nested card-skills">
+                    <div class="skill-level js-tooltip" title="Intermediate" data-placement="left">
+                      <div class="skill-progress intermediate">
+                      </div>
+                    </div>
+                    <div class="skill-info">
+                      <strong>Server and Hosting Environment</strong>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Linux Shell Scripting</span>
+                        <span class="label label-keyword">Apache</span>
+                        <span class="label label-keyword">Nginx</span>
+                        <span class="label label-keyword">Heroku</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail" id="education">
+            <div class="icon">
+              <i class="fa fa-lg fa-mortar-board"></i>
+              <span class="mobile-title">Education</span>
+            </div>
+            <div class="info">
+              <h4 class="title text-uppercase">
+                Education
+              </h4>
+
+              <div class="content">
+                <ul class="list-unstyled">
+                  <li class="card card-nested">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong>IT, Thesis</strong>,&nbsp;
+                        Universitat Politècnica de Catalunya
+                      </p>
+
+                      <p class="visible-xs visible-sm text-muted">
+                        <small>
+                          Jan, 2005 -
+                          Jan, 2006
+                        </small>
+                      </p>
+                      <i>Qualification: 9,5 out of 10.</i>
+
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Java</span>
+                        <span class="label label-keyword">Java3D-OpenGL</span>
+                        <span class="label label-keyword">MVC Architecture</span>
+                      </div>
+                    </div>
+                    <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                      <p>
+                        <strong>Started:</strong>&nbsp;
+                        Jan, 2005
+                      </p>
+
+                      <p>
+                        <strong>Completion:</strong>&nbsp;
+                        Jan, 2006
+                      </p>
+                    </div>
+                  </li>
+                  <li class="card card-nested">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong>IT, Bachelor&#x27;s degree</strong>,&nbsp;
+                        Universitat Politècnica de Catalunya
+                      </p>
+
+                      <p class="visible-xs visible-sm text-muted">
+                        <small>
+                          Jan, 2000 -
+                          Jan, 2006
+                        </small>
+                      </p>
+                      <i></i>
+
+                      <div class="space-top labels">
+                      </div>
+                    </div>
+                    <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                      <p>
+                        <strong>Started:</strong>&nbsp;
+                        Jan, 2000
+                      </p>
+
+                      <p>
+                        <strong>Completion:</strong>&nbsp;
+                        Jan, 2006
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-58664775-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
 </html>
